@@ -1,0 +1,10 @@
+site_name: pytest-foobar
+site_description: primeiro projeto com o cookiecutter
+site_author: Vinicius Feld
+
+theme: readthedocs
+
+repo_url: https://github.com/viniciusfeld/pytest-foobar
+
+pages:
+- Home: index.md

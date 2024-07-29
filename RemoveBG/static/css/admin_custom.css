@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Cor de fundo da página de login */
+}
+
+#login-container {
+    max-width: 400px;
+    margin: 100px auto; /* Centraliza verticalmente */
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#login-container h1 {
+    text-align: center;
+    color: #EB268F; /* Cor do título */
+}
+
+#login-container form {
+    margin-top: 20px;
+}
+
+#login-container form input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#login-container form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #EB268F; /* Cor do botão */
+    color: white;
+    font-size: 16px;
+}
+
+#login-container form button:hover {
+    background-color: #e69ac2; /* Cor do botão ao passar o mouse */
+}

@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 50px;
+    font-weight: bold;
+    color: #EB268F;
+    margin-left: 60px;
+}
+
+.logo .icon {
+    font-size: 50px;
+    color: #EB268F;
+}
+
+.title {
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-size: 45px;
+    font-weight: bold;
+    color: #737375;
+    margin-top: -30px; /* Ajuste para reduzir o espaço */
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    /* margin-right: 70px; */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.4s;
+    background-color: #EB268F;
+}
+
+nav a:hover {
+    background-color: #e69ac2;
+    color: #333;
+    text-decoration: none;
+}
+
+.login {
+    display: flex;
+    gap: 15px;
+    margin-right: 70px;
+}
+
+.login a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.4s;
+    background-color:#eb64ac;
+}
+
+.login a:hover {
+    background-color: #eeccde;
+    color: #333;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    align-items: flex-start; /* Alinha os itens no topo */
+}
+
+.upload-container {
+    width: 100%; /* Fazer o contêiner ocupar toda a largura disponível */
+    max-width: 500px; /* Aumentar a largura máxima */
+    height: 500px; /* Definir uma altura específica */
+    margin: 100px auto; /* Ajustar a margem para equilibrar */
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-right: 200px;
+    margin-top: 150px;
+    flex: 1;
+}
+
+.upload-container h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o texto e o ícone */
+    font-size: 2.5em; /* Ajuste o tamanho do texto conforme necessário */
+    color: #33CC33;
+}
+
+.upload-container h1 i {
+    margin-left: 15px; /* Espaço entre o ícone e o texto */
+    color:  #33CC33; /* Cor do ícone, você pode ajustar conforme necessário */
+    font-size: 40px;
+}
+
+.drop-zone {
+    position: relative;
+    border: 2px dashed #ccc;
+    padding: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    max-width: 500px; /* Aumentar a largura máxima */
+    height: 250px; /* Definir uma altura específica */
+    margin: auto; /* Ajustar a margem para equilibrar */
+    transition: background-color 0.3s;
+}
+
+.drag-message {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #33CC33;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.default-text {
+    transition: opacity 0.2s;
+    font-size: 20px;
+}
+
+.drop-zone.dragging {
+    background-color: #f0f0f0;
+}
+
+.drop-zone.dragging .drag-message {
+    display: block;
+}
+
+.drop-zone.dragging .default-text {
+    display: none;
+}
+
+.file-info {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px; /* Espaço inferior para separar do botão de remover */
+}
+
+.file-name {
+    font-size: 25px;
+    color: #737375;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden; /* Oculta o texto que excede o comprimento máximo */
+    text-overflow: ellipsis;
+    max-width: 100%;
+    margin-right: 10px; /* Espaço entre o nome do arquivo e o botão de remover */
+    margin-top: 70px;
+    max-width: calc(100% - 30px);
+}
+.file-name:hover {
+    cursor: default;
+}
+
+/* Esconde o botão por padrão */
+.remove-file {
+    display: none; /* Inicialmente oculto */
+    font-size: 30px; /* Ajuste o tamanho do X conforme necessário */
+    color: #e60000; /* Cor do X */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: color 0.3s; /* Transição suave para a cor ao passar o mouse */
+    margin-left: 10px; /* Adiciona espaço entre o nome do arquivo e o X */
+    line-height: 1; /* Garante que o botão não tenha altura adicional */
+    margin-top: 100px;
+}
+
+/* Estilo para o hover */
+.remove-file:hover {
+    color: #525252; /* Cor do X ao passar o mouse */
+}
+
+/* Estilo para o foco para remover o outline padrão */
+.remove-file:focus {
+    outline: none; /* Remove o contorno de foco */
+}
+
+.drop-zone input[type="file"] {
+    display: none;
+}
+
+#upload-button {
+    background-color: #33CC33;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#upload-button:hover {
+    background-color:#90ce90;
+}
+
+#upload-button.disabled {
+    background-color: #90ce90; /* Cor de fundo para o botão desativado */
+    color: #ffffff; /* Cor do texto para o botão desativado */
+    cursor: not-allowed; /* Cursor indicando que o botão está desativado */
+    pointer-events: none; /* Impede a interação com o botão */
+}
+
+
+.upload-container button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #EB268F;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.upload-container button:hover {
+    background-color: #e69ac2;
+}
+
+/* Estilo para o container da imagem */
+.image-container {
+    flex: 1; /* Faz o container da imagem ocupar o máximo de espaço disponível */
+    max-width: 500px; /* Limita a largura máxima da imagem */
+    margin-top: 150px;
+    margin-left: 300px;
+}
+
+/* Opcional: Ajusta a imagem para não exceder o container */
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.image-container p {
+    font-size: 45px; /* Ajuste o tamanho da fonte conforme necessário */
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-align: center; /* Centraliza o texto */
+    margin: 0; /* Remove a margem para melhor controle do layout */
+    width: 100%;
+    
+}
+
+.highlight-remova-fundo {
+    color:  #EB268F;
+}
+
+.highlight-imagem {
+    color:  #EB268F;
+}
+
+.highlight-marketplace {
+    color:  #EB268F;
+}
+
+.highlight-obs {
+    font-size: 25px; /* Ajuste o tamanho da fonte conforme necessário */
+    font-weight: bold;
+    color: #383838;
+    text-align: center; /* Centraliza o texto */
+    margin: 0; /* Remove a margem para melhor controle do layout */
+}
+
+.error-message {
+    display: none; /* Inicialmente oculto */
+    color: red; /* Cor do texto da mensagem de erro */
+    font-size: 18px; /* Tamanho da fonte */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid red; /* Borda para destacar a mensagem */
+    border-radius: 5px; /* Borda arredondada */
+    background-color: #fdd; /* Cor de fundo leve para a mensagem */
+    margin-top: 10px; /* Espaço acima da mensagem */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Adicione isso ao seu CSS */
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Certifique-se de esconder o loading inicialmente */
+#loading {
+    display: none;
+}
+
+
+/* Media query para telas pequenas */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 40px;
+    }
+
+    .logo .icon {
+        font-size: 40px;
+    }
+
+    .subtitle {
+        font-size: 30px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 30px;
+        margin-bottom: 10px; /* Espaço abaixo da logo */
+    }
+
+    .logo .icon {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
