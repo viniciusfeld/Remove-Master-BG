@@ -5,9 +5,15 @@
     <title>Login</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/admin_custom.css' %}">
+
+    <link rel="icon" href="{% static 'img/favicon_16x16.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'img/favicon_32x32.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'img/favicon_64x64.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'img/favicon_128x128.ico' %}" type="image/x-icon">
 </head>
 <body>
     <div id="login-container">
+        <a href="javascript:history.back()" class="back-button">Voltar</a>
         <h1>Login</h1>
         <form method="post" action="{% url 'admin:login' %}">
             {% csrf_token %}

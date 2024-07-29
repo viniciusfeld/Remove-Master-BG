@@ -44,3 +44,20 @@ body {
 #login-container form button:hover {
     background-color: #e69ac2; /* Cor do botão ao passar o mouse */
 }
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #EB268F; /* Cor rosa (#EB268F) */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.back-button:hover {
+    background-color: #ec77b5;
+}
