@@ -1,0 +1,17 @@
+# Ignora diretórios __pycache__ em qualquer lugar do repositório
+__pycache__/
+
+# Ignora arquivos .pyc e .pyo em qualquer lugar do repositório
+*.pyc
+*.pyo
+
+# Ignora diretórios e arquivos de ambiente virtual do Python
+venv/
+.env/
+
+# Ignora arquivos de configuração do IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.swp

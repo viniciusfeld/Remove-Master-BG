@@ -4,10 +4,11 @@ from django.core.files.storage import default_storage
 from RemoveBG.service.remove import Remove
 import os
 from Master.settings import BASE_DIR
+from RemoveBG.forms import ContactForm
 
 # Create your views here.
 
-def my_view(request):
+def page_upload(request):
     context = {'key': 'value'}
     return render(request, 'index.html', context)
 
@@ -21,6 +22,7 @@ def check_files_to_delete(file_name):
     if os.path.exists(f"{BASE_DIR}/img_white_background/{file_name}_fundo_branco.jpg"):
         os.remove(f"{BASE_DIR}/img_white_background/{file_name}_fundo_branco.jpg")
 
+
 def upload_file(request):
     remove = Remove()
     if request.method == 'POST':
@@ -32,3 +34,18 @@ def upload_file(request):
             check_files_to_delete(file_name)
             return HttpResponse(f'Erro ao receber o arquivo', status=400)
     return HttpResponse(f'Erro ao receber o arquivo', status=400)
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        try:
+            form = ContactForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return HttpResponse(f'Erro ao receber o arquivo', status=400)
+        except:
+            return HttpResponse(f'Erro ao receber o arquivo', status=400)
+    else:
+        form = ContactForm()
+    
+    return render(request, 'contact.html', {'form': form})

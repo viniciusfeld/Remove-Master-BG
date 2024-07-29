@@ -1,0 +1,93 @@
+.contact-form {
+    width: 500px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    position: absolute;
+    top: 60%;
+    right: 300px;
+    transform: translateY(-50%);
+}
+
+.contact-form p {
+    text-align: center;
+    color: #464646;
+    font-size: 20px;
+}
+
+.contact-form label {
+    display: none; /* Esconde os labels, pois usaremos placeholders */
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    width: 30%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #EB268F; /* Cor rosa (#EB268F) */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.4s;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #ec77b5;
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-message {
+    margin-top: 150px;
+    margin-left: 300px;
+    width: 15%;
+    padding: 30px;
+    font-size: 25px;
+    color: #3A3939;
+    text-align: left;
+}
+
+.contact-message h2 {
+    font-size: 40px;
+    color: #3A3939;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.status-message {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.status-message.success {
+    color: green;
+}
+
+.status-message.error {
+    color: red;
+}
+
+.title-link, .subtitle-link {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: inherit; /* Herda a cor do texto */
+}
+
+.title-link:hover, .subtitle-link:hover {
+    text-decoration: underline; /* Adiciona um sublinhado no hover para indicar que é clicável */
+}
+
+/* Estiliza o título e o subtítulo para serem exibidos inline */
+.title, .subtitle {
+    display: inline; /* Garante que o título e o subtítulo sejam exibidos como texto inline */
+}

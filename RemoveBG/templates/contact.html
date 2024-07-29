@@ -6,6 +6,7 @@
     <title>MASTER REMOVE BG</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -19,15 +20,34 @@
             <div class="subtitle">REMOVE BG</div>
         </div>
         <nav>
-            <a href="#">REMOVER FUNDO</a>
+            <a href="http://127.0.0.1:8000/">REMOVER FUNDO</a>
             <a href="#">PLANOS</a>
-            <a href="#">CONTATOS</a>
+            <a href="http://127.0.0.1:8000/contact">CONTATOS</a>
         </nav>
         <div class="login">
             <a href="http://127.0.0.1:8000/admin">Login</a>
         </div>
     </header>
     <main>
+        <div class="contact-form">
+            <p>Grande visão sem ótimas pessoas é irrelevante.</p>
+            <p>Vamos trabalhar juntos!</p>
+            <form id="contact-form" method="post" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                <textarea id="message" name="message" rows="8" placeholder="Envie sua mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div class="loading" id="loading">
+            </div>
+            <div class="status-message" id="status-message"></div>
+        </div>
+        <div class="contact-message">
+            <h2>CONTATO</h2>
+            <p>Preecha o formulário ao lado ou envie e-mail para contato@removemasterbg.com</p>
+        </div>
     </main>
+    <script src="{% static 'js/contact.js' %}"></script>
 </body>
 </html>
