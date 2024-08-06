@@ -1,7 +1,7 @@
 from PIL import Image
 from rembg import remove
 from Master.settings import BASE_DIR
-from django.http import HttpResponse
+from django.http import JsonResponse
 import os
 import time
 
@@ -23,7 +23,7 @@ class Remove():
         path_img_white_bg = str(f"{BASE_DIR}/img_white_background/{file_name}_fundo_branco").replace(".png","") + '.jpg'
         im.convert("RGB").save(path_img_white_bg)
         
-        return HttpResponse("Imagem criada com sucesso", status=200)
+        return JsonResponse({"message": "Imagem criada com sucesso", "data": file_name}, status=200)
 
     def remove_bg(self, file_name):
         # Carregar imagem

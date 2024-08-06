@@ -200,12 +200,12 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Nenhum arquivo selecionado.');
             return;
         }
-
+    
         showLoading(); // Mostra o loading
-
+    
         const formData = new FormData();
         formData.append('file', file);
-
+    
         fetch('/upload/', {
             method: 'POST',
             body: formData,
@@ -215,25 +215,27 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => {
             hideLoading(); // Oculta o loading
-            console.log('Status da resposta:', response.status); // Adicione este log para depuração
-        
             if (response.ok) {
-                return response; // Retorna a resposta em JSON
+                return response.json(); // Converte a resposta para JSON
             } else {
                 throw new Error('Erro na requisição');
             }
         })
         .then(data => {
             console.log('Arquivo enviado com sucesso:', data);
-            // Aqui você pode adicionar qualquer lógica adicional após o envio bem-sucedido
+            if (data.redirect_url) {
+                window.location.href = data.redirect_url; // Redireciona o usuário
+            } else {
+                showError('Erro no processamento. Tente novamente.'); // Mensagem de erro genérica
+            }
         })
         .catch(error => {
             hideLoading(); // Oculta o loading em caso de erro
-            console.error('Erro:', error); // Adicione este log para depuração
+            console.error('Erro:', error);
             showError('Falha ao enviar o arquivo. Por favor, tente novamente.'); // Mostra a mensagem de erro
         });
-        
     }
+    
 
     // Adiciona o listener de clique para o botão de envio
     uploadButton.addEventListener('click', sendFile);

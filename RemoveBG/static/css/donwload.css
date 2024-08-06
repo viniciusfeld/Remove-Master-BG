@@ -1,0 +1,54 @@
+.download-instruction {
+    max-width: 320px;
+    text-align: center;
+    font-size: 20px;
+    color: #3B3B3B;
+    margin-top: 60px;
+    font-weight: bold;
+    margin-left: 100px;
+}
+
+.image-container p {
+    max-width: 320px;
+    text-align: center;
+    font-size: 50px;
+    color: #33CC33;
+    margin-top: 20px;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-bottom: 50px;
+}
+
+.resolution-info {
+    max-width: 350px;
+    text-align: center;
+    font-size: 23px;
+    color: #5A5A5A;
+    margin-top: 20px;
+    margin-left: 75px;
+}
+
+.download-button {
+    display: inline-block;
+    width: 200px; /* Largura fixa para os botões */
+    height: 100px; /* Altura fixa para os botões */
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #adadad; /* Cor da borda */
+    border-radius: 15px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o conteúdo dentro do botão */
+    transition: transform 0.3s; /* Transição para efeito de hover */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassar o tamanho do botão */
+}
+.download-button:hover {
+    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+.download-icon {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+

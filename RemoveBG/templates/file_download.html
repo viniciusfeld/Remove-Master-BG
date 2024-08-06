@@ -6,6 +6,7 @@
     <title>MASTER REMOVE BG</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/donwload.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
@@ -24,7 +25,7 @@
             <div class="subtitle">REMOVE BG</div>
         </div>
         <nav>
-            <a href="#">REMOVER FUNDO</a>
+            <a href="http://127.0.0.1:8000/">REMOVER FUNDO</a>
             <a href="http://127.0.0.1:8000/contact">CONTATOS</a>
         </nav>
         <div class="login">
@@ -34,29 +35,22 @@
     <main>
         <div class="image-container">
             <img src="{% static 'img/remove-bg.png' %}" alt="Imagem exemplo">
-            <p>
-                <span class="highlight-remova-fundo">Remova fundo</span> da sua 
-                <span class="highlight-imagem">imagem</span> e utilize no seu 
-                <span class="highlight-marketplace">Marketplace</span>.
-            </p>
+            <p>Sua imagem está pronta!</p>
             <div class="highlight-obs">*Remove de forma automática</div>.
         </div>
         <div class="upload-container">
-            <h1>Faça Upload<i class="fas fa-upload"></i></h1>
-            <div id="drop-zone" class="drop-zone">
-                <p class="drag-message">Solte o arquivo aqui</p>
-                <p class="default-text">Arraste e solte a imagem aqui ou clique para selecionar</p>
-                <div id="file-info" class="file-info">
-                    <p id="file-name" class="file-name">Nenhuma imagem selecionada</p>
-                    <p id="remove-file" class="remove-file" style="display: none;">&#10006;</p> <!-- Botão para remover -->
-                </div>
-                <input type="file" id="file" name="file" multiple>
-                <div id="loading" class="loading"></div>
-            </div>
-            <div id="error-message" class="error-message"></div>
-            <button id="upload-button">Enviar</button>
+            <h1>Faça Download<i class="fas fa-upload"></i></h1>
+            <p class="download-instruction">CLIQUE NOS LINKS ABAIXO PARA BAIXAR SUA IMAGEM</p>
+            <!-- Botões de download como imagens -->
+            <a href="{{ download_url }}" download="{{ file_name }}" class="download-button">
+                <img src="{% static 'img/mercado-livre-logo.png' %}" class="download-icon">
+            </a>
+            <a href="{{ download_url }}" download="{{ file_name }}" class="download-button">
+                <img src="{% static 'img/olx-logo.png' %}" class="download-icon">
+            </a>
+            <p class="resolution-info">Imagem em resolução de 1200x1200px. Ideal para marketplaces</p>
         </div>
     </main>
-    <script src="{% static 'js/upload.js' %}"></script>
+    <!-- <script src="{% static 'js/upload.js' %}"></script> -->
 </body>
 </html>
