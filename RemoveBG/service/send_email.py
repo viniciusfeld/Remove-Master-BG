@@ -1,5 +1,6 @@
 import email.message 
 import smtplib
+from django.conf import settings
 
 from Master.settings import BASE_DIR
 
@@ -17,6 +18,8 @@ class DataEmail():
 
         # body_email = body_email.replace('{number_for_whats}', f'api.whatsapp.com/send/?phone={request.data["phoneContact"]}')
         # body_email = body_email.replace('{phone_contact}', request.data["phoneContact"])
+        body_email = body_email.replace('{logo_principal}', f'{settings.SITE_URL}{settings.STATIC_URL}img/logo-principal.png')
+        body_email = body_email.replace('{logo_footer}', f'{settings.SITE_URL}{settings.STATIC_URL}img/favicon_32x32.ico')
         body_email = body_email.replace('{name_contact}', request.POST["name"])
         body_email = body_email.replace('{email_contact}', request.POST["email"])
         body_email = body_email.replace('{message_contact}', request.POST["message"])

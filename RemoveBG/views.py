@@ -85,5 +85,6 @@ def serve_file(request, file_name):
     with open(file_path, 'rb') as f:
         response = HttpResponse(f.read(), content_type='application/octet-stream')
         response['Content-Disposition'] = f'attachment; filename="{file_name}"'
-        return response
+
+    return response
     

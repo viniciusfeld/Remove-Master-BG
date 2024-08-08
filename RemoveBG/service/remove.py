@@ -19,8 +19,10 @@ class Remove():
             y_position = (background.height - im.height) // 2
             background.paste(im, (x_position,y_position),im.split()[-1]) # omit transparency
             im = background
+
+        file_name_without_extension = file_name.split('.')[0]
         
-        path_img_white_bg = str(f"{BASE_DIR}/img_white_background/{file_name}_fundo_branco").replace(".png","") + '.jpg'
+        path_img_white_bg = str(f"{BASE_DIR}/img_white_background/{file_name_without_extension}_fundo_branco").replace(".png","") + '.jpg'
         im.convert("RGB").save(path_img_white_bg)
         
         return JsonResponse({"message": "Imagem criada com sucesso", "data": file_name}, status=200)
@@ -38,8 +40,9 @@ class Remove():
         position = ((desired_size[0] - imagem_sem_fundo.size[0]) // 2, (desired_size[1] - imagem_sem_fundo.size[1]) // 2)
         new_image.paste(imagem_sem_fundo,position)
         
+        file_name_without_extension = file_name.split('.')[0]
         # Salvar como PNG e JPG
-        path_img = f"{BASE_DIR}/img_remove_bg/{file_name}_sem_fundo.png"
+        path_img = f"{BASE_DIR}/img_remove_bg/{file_name_without_extension}_sem_fundo.png"
         new_image.save(path_img)
 
         while not os.path.exists(path_img):
