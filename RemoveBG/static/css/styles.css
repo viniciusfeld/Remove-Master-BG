@@ -4,6 +4,7 @@ body {
     font-family: 'Oswald', sans-serif;
     margin: 0;
     padding: 0;
+    padding: 0 10px; /* Adiciona um pequeno padding lateral */
 }
 
 header {
@@ -43,7 +44,6 @@ header {
 nav {
     display: flex;
     gap: 15px;
-    /* margin-right: 70px; */
 }
 
 nav a {
@@ -182,6 +182,7 @@ main {
     margin-top: 70px;
     max-width: calc(100% - 30px);
 }
+
 .file-name:hover {
     cursor: default;
 }
@@ -234,7 +235,6 @@ main {
     pointer-events: none; /* Impede a interação com o botão */
 }
 
-
 .upload-container button {
     margin-top: 20px;
     width: 100%;
@@ -272,7 +272,6 @@ main {
     text-align: center; /* Centraliza o texto */
     margin: 0; /* Remove a margem para melhor controle do layout */
     width: 100%;
-    
 }
 
 .highlight-remova-fundo {
@@ -295,6 +294,7 @@ main {
     margin: 0; /* Remove a margem para melhor controle do layout */
 }
 
+/* Estilo para a mensagem de erro */
 .error-message {
     display: none; /* Inicialmente oculto */
     color: red; /* Cor do texto da mensagem de erro */
@@ -307,7 +307,74 @@ main {
     text-align: center; /* Centraliza o texto */
 }
 
-/* Adicione isso ao seu CSS */
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 30px;
+        margin-left: 0;
+    }
+
+    .logo .icon {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 30px;
+        margin-top: -20px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        margin-right: 0;
+    }
+
+    .login {
+        margin-right: 0;
+    }
+
+    .upload-container {
+        width: 90%;
+        max-width: none;
+        margin: 20px auto;
+        padding: 10px;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    .image-container {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .file-name {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .remove-file {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    #upload-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    
+    .upload-container button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Estilo de loading */
 .loading {
     position: absolute;
     top: 50%;
@@ -329,61 +396,4 @@ main {
 /* Certifique-se de esconder o loading inicialmente */
 #loading {
     display: none;
-}
-
-
-/* Media query para telas pequenas */
-@media (max-width: 768px) {
-    .logo {
-        font-size: 40px;
-    }
-
-    .logo .icon {
-        font-size: 40px;
-    }
-
-    .subtitle {
-        font-size: 30px;
-    }
-
-    nav {
-        gap: 10px;
-    }
-
-    nav a {
-        font-size: 18px;
-        padding: 10px 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .logo {
-        font-size: 30px;
-        margin-bottom: 10px; /* Espaço abaixo da logo */
-    }
-
-    .logo .icon {
-        font-size: 30px;
-    }
-
-    .subtitle {
-        font-size: 24px;
-    }
-
-    nav {
-        flex-direction: column;
-        gap: 10px;
-        margin: 0;
-    }
-
-    nav a {
-        font-size: 16px;
-        padding: 8px 12px;
-    }
 }

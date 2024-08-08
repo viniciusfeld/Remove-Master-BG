@@ -5,14 +5,14 @@ from django.core.files.storage import default_storage
 from RemoveBG.service.remove import Remove
 from RemoveBG.service.send_email import DataEmail
 import os
-from Master.settings import BASE_DIR
+from Master.settings import BASE_DIR, SITE_URL
 from RemoveBG.forms import ContactForm
 from django.conf import settings
 
 # Create your views here.
 
 def page_upload(request):
-    context = {'key': 'value'}
+    context = {'key': 'value', "URL_SITE": SITE_URL}
     return render(request, 'index.html', context)
 
 
@@ -64,13 +64,13 @@ def contact_view(request):
     else:
         form = ContactForm()
     
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'contact.html', {'form': form, "URL_SITE": SITE_URL})
 
 
 def download_file(request):
     file_name = request.session.get('file_name')
     download_url = f"{settings.SITE_URL}/serve_file/{file_name}"  # Ajuste conforme a configuração do seu site
-    context = {'download_url': download_url, 'file_name': file_name}
+    context = {'download_url': download_url, 'file_name': file_name, "URL_SITE": SITE_URL}
     return render(request, 'file_download.html', context)
 
 
