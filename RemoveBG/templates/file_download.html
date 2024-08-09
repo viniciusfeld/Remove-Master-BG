@@ -42,13 +42,16 @@
             <h1>Faça Download<i class="fas fa-upload"></i></h1>
             <p class="download-instruction">CLIQUE NOS LINKS ABAIXO PARA BAIXAR SUA IMAGEM</p>
             <!-- Botões de download como imagens -->
-            <a href="{{ download_url }}" download="{{ file_name }}" class="download-button">
+            <a href="{{ download_url }}?type=jpg" download="{{ file_name }}" class="download-button">
                 <img src="{% static 'img/mercado-livre-logo.png' %}" class="download-icon">
             </a>
-            <a href="{{ download_url }}" download="{{ file_name }}" class="download-button">
+            <a href="{{ download_url }}?type=jpg" download="{{ file_name }}" class="download-button">
                 <img src="{% static 'img/olx-logo.png' %}" class="download-icon">
             </a>
             <p class="resolution-info">Imagem em resolução de 1200x1200px. Ideal para marketplaces</p>
+            <a href="{{ download_url }}?type=png" download="{{ file_name }}" class="download-png">
+                Clique aqui para fazer o download em PNG
+            </a>
         </div>
     </main>
     <!-- <script src="{% static 'js/upload.js' %}"></script> -->

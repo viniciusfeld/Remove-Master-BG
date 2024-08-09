@@ -1,47 +1,52 @@
+/* Estilos gerais */
 .download-instruction {
     max-width: 320px;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     color: #3B3B3B;
-    margin-top: 60px;
+    margin-top: 40px; /* Reduz a margem superior */
     font-weight: bold;
-    margin-left: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .image-container p {
     max-width: 320px;
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     color: #33CC33;
-    margin-top: 20px;
+    margin-top: 10px;
     font-weight: bold;
-    margin-left: 100px;
-    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px; /* Ajusta a margem inferior */
 }
 
 .resolution-info {
     max-width: 350px;
     text-align: center;
-    font-size: 23px;
+    font-size: 18px;
     color: #5A5A5A;
     margin-top: 20px;
-    margin-left: 75px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .download-button {
     display: inline-block;
-    width: 200px; /* Largura fixa para os botões */
-    height: 100px; /* Altura fixa para os botões */
-    margin: 10px;
+    width: 160px; /* Ajusta a largura dos botões */
+    height: 80px; /* Ajusta a altura dos botões */
+    margin: 5px; /* Ajusta a margem */
     padding: 10px;
-    border: 2px solid #adadad; /* Cor da borda */
-    border-radius: 15px; /* Bordas arredondadas */
-    text-align: center; /* Centraliza o conteúdo dentro do botão */
-    transition: transform 0.3s; /* Transição para efeito de hover */
-    overflow: hidden; /* Esconde o conteúdo que ultrapassar o tamanho do botão */
+    border: 2px solid #adadad;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+    overflow: hidden;
 }
+
 .download-button:hover {
-    transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+    transform: scale(1.05);
 }
 
 .download-icon {
@@ -51,4 +56,203 @@
     margin: auto;
 }
 
+/* Estilos para o botão de download em PNG */
+.download-png {
+    display: inline-block; /* Permite ajustar a largura e altura do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    color: black; /* Cor do texto do botão */
+    font-size: 18px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove o sublinhado do link */
+    border-radius: 5px; /* Bordas arredondadas */
+    border: 2px solid #666666; /* Borda do botão */
+    transition: background-color 0.3s, border-color 0.3s; /* Transição suave para efeitos de hover */
+    overflow: hidden;
+}
 
+.download-png:hover {
+    background-color: white; /* Cor de fundo ao passar o mouse */
+    color: #33CC33; /* Cor do texto ao passar o mouse */
+    border-color: #33CC33;
+}
+
+.download-png:active {
+    background-color: #33CC33;
+    color: black;
+    border-color: #33CC33;
+}
+
+
+/* Responsividade para telas de 820px */
+@media screen and (max-width: 1024px) {
+
+    .image-container p {
+        font-size: 35px; /* Ajuste da fonte */
+        margin-top: 10px;
+        margin-bottom: 20px; /* Ajuste da margem inferior */
+    }
+
+    .download-button {
+        width: 140px; /* Ajusta a largura dos botões */
+        height: 70px; /* Ajusta a altura dos botões */
+    }
+
+    .download-png {
+        font-size: 16px;
+        width: 100px; /* Ajusta a largura dos botões */
+        height: 70px; /* Ajusta a altura dos botões */
+    }
+
+    .resolution-info {
+        font-size: 16px; /* Ajusta a fonte */
+        margin-top: 15px;
+    }
+
+    /* Ajusta o container da imagem e a drop zone */
+    .image-container {
+        width: 90%; /* Ajusta a largura */
+        max-width: none; /* Remove o limite de largura */
+        margin: 150px auto; /* Ajusta as margens */
+    }
+
+    .drop-zone {
+        width: 90%; /* Ajusta a largura */
+        max-width: none; /* Remove o limite de largura */
+        height: 200px; /* Ajusta a altura */
+    }
+
+    .upload-container {
+        width: 90%; /* Ajusta a largura */
+        max-width: none; /* Remove o limite de largura */
+        margin: 150px auto; /* Ajusta as margens */
+    }
+
+    .upload-container h1{
+        font-size: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 10px;
+    }
+}
+
+/* Responsividade para telas de 820px */
+@media screen and (max-width: 820px) {
+    .download-instruction,
+    .image-container p,
+    .resolution-info {
+        font-size: 16px; /* Ajuste da fonte */
+        margin-left: 20px; /* Ajusta as margens laterais */
+        margin-right: 20px; /* Ajusta as margens laterais */
+        padding: 0; /* Remove o padding lateral */
+    }
+
+    .image-container p {
+        font-size: 35px; /* Ajuste da fonte */
+        margin-top: 10px;
+        margin-bottom: 20px; /* Ajuste da margem inferior */
+    }
+
+    .download-button {
+        width: 140px; /* Ajusta a largura dos botões */
+        height: 70px; /* Ajusta a altura dos botões */
+    }
+
+    .resolution-info {
+        font-size: 16px; /* Ajusta a fonte */
+        margin-top: 15px;
+    }
+
+    /* Ajusta o container da imagem e a drop zone */
+    .image-container {
+        width: 90%; /* Ajusta a largura */
+        max-width: none; /* Remove o limite de largura */
+        margin: 20px auto; /* Ajusta as margens */
+    }
+
+    .drop-zone {
+        width: 90%; /* Ajusta a largura */
+        max-width: none; /* Remove o limite de largura */
+        height: 200px; /* Ajusta a altura */
+    }
+
+    .upload-container {
+        width: 90%; /* Ajusta a largura */
+        max-width: none; /* Remove o limite de largura */
+        margin: 20px auto; /* Ajusta as margens */
+    }
+
+    .upload-container h1{
+        font-size: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 10px;
+    }
+}
+
+/* Responsividade para telas menores que 768px */
+@media screen and (max-width: 768px) {
+    .download-instruction,
+    .image-container p,
+    .resolution-info {
+        font-size: 14px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 10px;
+    }
+
+    .image-container p {
+        font-size: 30px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .download-button {
+        width: 120px;
+        height: 60px;
+    }
+
+    .resolution-info {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}
+
+/* Responsividade para telas menores que 480px */
+@media screen and (max-width: 480px) {
+    .download-instruction,
+    .image-container p,
+    .resolution-info {
+        font-size: 14px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 5px;
+    }
+
+    .image-container p {
+        font-size: 24px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .download-button {
+        width: 100px;
+        height: 50px;
+    }
+
+    .download-png {
+        font-size: 10px;
+        width: 80px;
+        height: 30px;
+    }
+
+    .resolution-info {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}

@@ -75,9 +75,15 @@ def download_file(request):
 
 
 def serve_file(request, file_name):
+    download_type = request.GET.get('type')    
     file_name = file_name.split('.')[0]
-    file_name = f"{file_name}_fundo_branco.jpg"
-    file_path = os.path.join(BASE_DIR, 'img_white_background', file_name)
+
+    if download_type == "jpg":
+        file_name = f"{file_name}_fundo_branco.jpg"
+        file_path = os.path.join(BASE_DIR, 'img_white_background', file_name)
+    elif download_type == "png":
+        file_name = f"{file_name}_sem_fundo.png"
+        file_path = os.path.join(BASE_DIR, 'img_remove_bg', file_name)
     
     if not os.path.exists(file_path):
         raise Http404("Arquivo não encontrado")
