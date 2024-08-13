@@ -91,3 +91,77 @@
 .title, .subtitle {
     display: inline; /* Garante que o título e o subtítulo sejam exibidos como texto inline */
 }
+
+@media screen and (max-width: 1024px) {
+
+    .contact-form input, 
+    .contact-form textarea {
+        width: calc(100% - 20px); /* Ajusta a largura considerando o padding */
+    }
+
+    .contact-form {
+        position: static;
+        transform: none;
+        margin: 50px auto 0; /* Adicionado margin-top para afastar do menu */
+        width: 80%;
+    }
+
+    .contact-message {
+        width: 80%;
+        margin: 30px auto 0;
+        text-align: center;
+    }
+
+    .contact-message h2 {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-form input, 
+    .contact-form textarea {
+        width: calc(100% - 20px); /* Ajusta a largura considerando o padding */
+    }
+
+    .contact-form {
+        margin: 60px auto 0; /* Aumentado o margin-top para mais afastamento */
+        width: 90%;
+    }
+
+    .contact-message {
+        width: 90%;
+        font-size: 20px;
+        margin: 20px auto 0;
+        text-align: center;
+    }
+
+    .contact-message h2 {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .contact-form input, 
+    .contact-form textarea {
+        width: calc(100% - 20px); /* Ajusta a largura considerando o padding */
+        font-size: 16px; /* Ajusta o tamanho da fonte para telas menores */
+    }
+
+    .contact-form {
+        margin: 70px auto 0; /* Maior margin-top para telas menores */
+        width: 100%;
+        padding: 20px;
+    }
+
+    .contact-message {
+        width: 100%;
+        font-size: 18px;
+        margin: 10px auto 0;
+        text-align: center;
+    }
+
+    .contact-message h2 {
+        font-size: 25px;
+    }
+}
