@@ -29,7 +29,9 @@ DEBUG = os.getenv('DEBUG')
 
 SITE_URL = os.getenv('URL_SITE')
 
-ALLOWED_HOSTS = [f'http://{SITE_URL}', f'http://www.{SITE_URL}']
+# ALLOWED_HOSTS = [f'http://{SITE_URL}', f'http://www.{SITE_URL}']
+
+ALLOWED_HOSTS = ['www.masterremovebg.com', 'masterremovebg.com']
 
 # Application definition
 
