@@ -1,0 +1,8 @@
+AddHandler wsgi-script .py
+RewriteEngine On
+RewriteBase /
+WSGIScriptAlias / /home/seu_usuario/www/seu_projeto/wsgi.py
+
+<Directory /home/seu_usuario/www/seu_projeto/>
+    Require all granted
+</Directory>

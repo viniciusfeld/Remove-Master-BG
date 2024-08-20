@@ -25,11 +25,11 @@ load_dotenv()
 SECRET_KEY = "django-insecure-v+r=$268lgdb#r1e*n23z=5-4z2xr@hf*z%&-))efbjr+_h+c&"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
 SITE_URL = os.getenv('URL_SITE')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [f'{SITE_URL}', f'www.{SITE_URL}']
 
 # Application definition
 
