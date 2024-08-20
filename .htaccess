@@ -1,8 +1,8 @@
 AddHandler wsgi-script .py
 RewriteEngine On
 RewriteBase /
-WSGIScriptAlias / /home/seu_usuario/www/seu_projeto/wsgi.py
+WSGIScriptAlias / /home/masterremovebg/www/Remove-Master-BG/Master/wsgi.py
 
-<Directory /home/seu_usuario/www/seu_projeto/>
+<Directory /home/masterremovebg/www/Remove-Master-BG/>
     Require all granted
 </Directory>
