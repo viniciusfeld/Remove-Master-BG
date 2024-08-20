@@ -38,7 +38,7 @@ pillow
 platformdirs
 pooch
 protobuf
-psycopg2
+psycopg2-binary==2.9.9
 Pygments
 PyMatting
 pyreadline3
