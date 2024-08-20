@@ -29,7 +29,7 @@ DEBUG = os.getenv('DEBUG')
 
 SITE_URL = os.getenv('URL_SITE')
 
-ALLOWED_HOSTS = [f'{SITE_URL}', f'www.{SITE_URL}']
+ALLOWED_HOSTS = [f'http://{SITE_URL}', f'http://www.{SITE_URL}']
 
 # Application definition
 
