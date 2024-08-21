@@ -135,7 +135,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Localização dos arquivos estáticos
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, 'RemoveBG/staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "RemoveBG/static")]
 
 LOGIN_REDIRECT_URL = '/admin/'
