@@ -29,9 +29,9 @@ DEBUG = os.getenv('DEBUG')
 
 SITE_URL = os.getenv('URL_SITE')
 
-# ALLOWED_HOSTS = [f'http://{SITE_URL}', f'http://www.{SITE_URL}']
+ALLOWED_HOSTS = [f'http://{SITE_URL}', f'http://www.{SITE_URL}']
 
-ALLOWED_HOSTS = ['www.masterremovebg.com', 'masterremovebg.com']
+# ALLOWED_HOSTS = ['www.masterremovebg.com', 'masterremovebg.com']
 
 # Application definition
 
@@ -134,7 +134,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Localização dos arquivos estáticos
 
-STATIC_URL = 'RemoveBG/static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'RemoveBG/staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "RemoveBG/static")]
 
