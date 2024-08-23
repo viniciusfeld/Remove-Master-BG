@@ -1,9 +1,10 @@
 from PIL import Image
-from rembg import remove
+# from rembg import remove
 from Master.settings import BASE_DIR
 from django.http import JsonResponse
 import os
 import time
+import requests
 
 class Remove():
 
@@ -28,24 +29,40 @@ class Remove():
         return JsonResponse({"message": "Imagem criada com sucesso", "data": file_name}, status=200)
 
     def remove_bg(self, file_name):
+        url = "https://api.remove.bg/v1.0/removebg"  # Endpoint para Remove.bg
+        api_key = "Vtn1xgr46JJMHLdomBZP4Lyo"  # Substitua pela sua chave de API do Remove.bg
+
         # Carregar imagem
-        imagem = Image.open(f"{BASE_DIR}/media/{file_name}")
+        input_image_path = f"{BASE_DIR}/media/{file_name}"
         desired_size = (1200, 1200)
-        imagem.thumbnail(desired_size, Image.LANCZOS)
 
-        # Remover fundo
-        imagem_sem_fundo = remove(imagem, api_key="SEU_API_KEY")
-        imagem_sem_fundo.thumbnail(desired_size, Image.LANCZOS)
-        new_image = Image.new("RGBA", desired_size, (0, 0, 0, 0))
-        position = ((desired_size[0] - imagem_sem_fundo.size[0]) // 2, (desired_size[1] - imagem_sem_fundo.size[1]) // 2)
-        new_image.paste(imagem_sem_fundo,position)
-        
-        file_name_without_extension = file_name.split('.')[0]
-        # Salvar como PNG e JPG
-        path_img = f"{BASE_DIR}/img_remove_bg/{file_name_without_extension}_sem_fundo.png"
-        new_image.save(path_img)
+        with open(input_image_path, 'rb') as image_file:
+            headers = {
+                'X-Api-Key': api_key
+            }
+            files = {
+                'image_file': image_file
+            }
+            response = requests.post(url, headers=headers, files=files, stream=True)
+            
+            if response.status_code == 200:
+                # Salvar a imagem com o fundo removido
+                file_name_without_extension = file_name.split('.')[0]
+                path_img = f"{BASE_DIR}/img_remove_bg/{file_name_without_extension}_sem_fundo.png"
+                with open(path_img, 'wb') as out_file:
+                    out_file.write(response.content)
+                    out_file.close()
 
-        while not os.path.exists(path_img):
-            time.sleep(1)
-        os.remove(f"{BASE_DIR}/media/{file_name}")
-        return self.insert_white_background(path_img, file_name)
+                # Garantir que o arquivo foi salvo antes de remover o original
+                time.sleep(2)  # Adicionar atraso para garantir que o arquivo esteja disponível
+
+                # Remover imagem original
+                # if os.path.exists(input_image_path):
+                #     os.remove(input_image_path)
+
+                print(f"Removendo imagem com fundo removido: {path_img}")
+                return self.insert_white_background(path_img, file_name)
+            else:
+                print(f'Erro: {response.status_code}')
+                print(response.text)
+                return JsonResponse({"message": "Erro ao remover fundo"}, status=response.status_code)
