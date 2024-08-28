@@ -13,6 +13,7 @@ from django.conf import settings
 
 def page_upload(request):
     context = {'key': 'value', "URL_SITE": SITE_URL}
+    print("SITE_URL em page upload", SITE_URL)
     return render(request, 'index.html', context)
 
 
