@@ -5,6 +5,7 @@ from django.http import JsonResponse
 import os
 import time
 import requests
+from Master.settings import BASE_DIR, SITE_URL
 
 class Remove():
 
@@ -60,6 +61,7 @@ class Remove():
                 # if os.path.exists(input_image_path):
                 #     os.remove(input_image_path)
 
+                print("SITE_URL em page upload", SITE_URL)
                 print(f"Removendo imagem com fundo removido: {path_img}")
                 return self.insert_white_background(path_img, file_name)
             else:
