@@ -17,8 +17,7 @@ url_site = os.getenv('URL_SITE')
 # Create your views here.
 
 def page_upload(request):
-    context = {'key': 'value', "URL_SITE": url_site}
-    print("url_site no page upload", url_site)
+    context = {'key': 'value'}
     return render(request, 'index.html', context)
 
 
@@ -70,13 +69,13 @@ def contact_view(request):
     else:
         form = ContactForm()
     
-    return render(request, 'contact.html', {'form': form, "URL_SITE": url_site})
+    return render(request, 'contact.html', {'form': form})
 
 
 def download_file(request):
     file_name = request.session.get('file_name')
     download_url = f"{url_site}/serve_file/{file_name}"  # Ajuste conforme a configuração do seu site
-    context = {'download_url': download_url, 'file_name': file_name, "URL_SITE": url_site}
+    context = {'download_url': download_url, 'file_name': file_name,}
     return render(request, 'file_download.html', context)
 
 
