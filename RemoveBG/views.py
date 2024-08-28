@@ -18,6 +18,7 @@ url_site = os.getenv('URL_SITE')
 
 def page_upload(request):
     context = {'key': 'value', "URL_SITE": url_site}
+    print("url_site no page upload", url_site)
     return render(request, 'index.html', context)
 
 
