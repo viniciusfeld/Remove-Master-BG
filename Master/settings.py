@@ -31,7 +31,7 @@ SITE_URL = os.getenv('URL_SITE')
 
 # ALLOWED_HOSTS = [f'http://{SITE_URL}', f'http://www.{SITE_URL}']
 
-ALLOWED_HOSTS = ['www.masterremovebg.com', 'masterremovebg.com']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
 # Application definition
 
