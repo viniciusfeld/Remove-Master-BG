@@ -7,5 +7,4 @@ urlpatterns = [
     path('contact/', views.contact_view, name='contact'),
     path('donwload/', views.download_file, name='download_file'),
     path('serve_file/<str:file_name>/', views.serve_file, name='serve_file'),
-    # outras URLs
 ]
