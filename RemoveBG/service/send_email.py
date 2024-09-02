@@ -18,6 +18,8 @@ class DataEmail():
 
         # body_email = body_email.replace('{number_for_whats}', f'api.whatsapp.com/send/?phone={request.data["phoneContact"]}')
         # body_email = body_email.replace('{phone_contact}', request.data["phoneContact"])
+
+        print("logo principal", f'{SITE_URL}{STATIC_URL}img/logo-principal.png')
         body_email = body_email.replace('{logo_principal}', f'{SITE_URL}{STATIC_URL}img/logo-principal.png')
         body_email = body_email.replace('{logo_footer}', f'{SITE_URL}{STATIC_URL}img/favicon_32x32.ico')
         body_email = body_email.replace('{name_contact}', request.POST["name"])
