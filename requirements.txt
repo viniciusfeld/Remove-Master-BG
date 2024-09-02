@@ -22,11 +22,11 @@ imageio==2.34.2
 Jinja2==3.1.4
 jsonschema==4.23.0
 jsonschema-specifications==2023.12.1
-lazy_loader==0.4
-llvmlite==0.43.0
-markdown-it-py==3.0.0
-MarkupSafe==2.1.5
-mdurl==0.1.2
+lazy_loader
+llvmlite
+markdown-it-py
+MarkupSafe
+mdurl
 mpmath
 networkx
 numba
@@ -38,7 +38,7 @@ pillow
 platformdirs
 pooch
 protobuf
-psycopg2-binary==2.9.9
+psycopg2-binary
 Pygments
 PyMatting
 pyreadline3
