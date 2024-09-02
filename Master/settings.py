@@ -135,6 +135,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Localização dos arquivos estáticos
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # STATIC_ROOT = os.path.join(BASE_DIR, 'RemoveBG/staticfiles')
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, "RemoveBG/static")]
 
