@@ -92,6 +92,29 @@
     display: inline; /* Garante que o título e o subtítulo sejam exibidos como texto inline */
 }
 
+button {
+    background-color: #EB268F; /* Cor padrão do botão */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Animação de transição */
+}
+
+/* Estilo para o botão desativado */
+button:disabled {
+    background-color: #ccc; /* Cor apagada para o botão desativado */
+    color: #666; /* Cor do texto mais clara */
+    cursor: not-allowed; /* Cursor de não permitido */
+    transition: none; /* Remove qualquer animação */
+}
+
+/* Opcional: remover qualquer sombra ou borda para o estado desativado */
+button:disabled {
+    box-shadow: none;
+    border: 1px solid #999; /* Borda opcional para diferenciar do fundo */
+}
+
 @media screen and (max-width: 1024px) {
 
     .contact-form input, 

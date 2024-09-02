@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Exibe o carregamento e oculta a mensagem de status
         document.getElementById('loading').style.display = 'block';
         document.getElementById('status-message').style.display = 'none';
+        document.getElementById('send_button').disabled = true;
         
         const formData = new FormData(this);
         
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => {
             // Oculta o carregamento
             document.getElementById('loading').style.display = 'none';
+            document.getElementById('send_button').disabled = false;
             
             if (response.ok) {
                 // Exibe a mensagem de sucesso
@@ -33,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => {
             // Oculta o carregamento
             document.getElementById('loading').style.display = 'none';
+            document.getElementById('send_button').disabled = false;
             
             // Exibe a mensagem de erro
             document.getElementById('status-message').textContent = 'Ocorreu um erro inesperado.';
