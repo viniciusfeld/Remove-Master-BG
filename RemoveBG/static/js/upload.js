@@ -53,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Função para mostrar o loading
     function showLoading() {
         if (loadingElement) {
-            console.log("entrou no meu loading")
             loadingElement.style.display = 'block';
         }
         toggleUploadButton(false); // Desabilita o botão de enviar
@@ -240,4 +239,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Adiciona o listener de clique para o botão de envio
     uploadButton.addEventListener('click', sendFile);
+});
+
+document.getElementById("upload-title").addEventListener("click", function() {
+    document.getElementById("file").click(); // Simula o clique no input file
 });

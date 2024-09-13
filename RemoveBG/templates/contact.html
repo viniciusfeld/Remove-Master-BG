@@ -21,18 +21,19 @@
 <body>
     <meta name="csrf-token" content="{{ csrf_token }}">
     <header>
-        <div class="logo">
+        <!-- <div class="logo">
             <div class="title">
-                MASTER <span class="icon">&#9654;</span> <!-- Ícone de play -->
+                MASTER <span class="icon">&#9654;</span>
             </div>
             <div class="subtitle">REMOVE BG</div>
-        </div>
+        </div> -->
+        <a href="/"><img src="{% static 'img/logo-master-remove-bg.png' %}" alt="Logo" width="230" height="150" class="logo"></a>
         <nav>
             <a href="/">REMOVER FUNDO</a>
-            <a href="/contact">CONTATOS</a>
+            <a href="/contact">CONTATO</a>
         </nav>
         <div class="login">
-            <a href="/admin">Login</a>
+            <a href="/admin" hidden="true">Login</a>
         </div>
     </header>
     <main>
@@ -52,7 +53,7 @@
         </div>
         <div class="contact-message">
             <h2>CONTATO</h2>
-            <p>Preecha o formulário ao lado ou envie e-mail para contato@removemasterbg.com</p>
+            <p>Preencha o formulário ao lado ou envie e-mail para contato@masterremovebg.com</p>
         </div>
     </main>
     <script src="{% static 'js/contact.js' %}"></script>

@@ -20,18 +20,19 @@
 <body>
     <meta name="csrf-token" content="{{ csrf_token }}">
     <header>
-        <div class="logo">
+        <!-- <div class="logo">
             <div class="title">
-                MASTER <span class="icon">&#9654;</span> <!-- Ícone de play -->
+                MASTER <span class="icon">&#9654;</span>
             </div>
             <div class="subtitle">REMOVE BG</div>
-        </div>
+        </div> -->
+        <a href="/"><img src="{% static 'img/logo-master-remove-bg.png' %}" alt="Logo" width="230" height="150" class="logo"></a>
         <nav>
             <a href="/">REMOVER FUNDO</a>
-            <a href="/contact">CONTATOS</a>
+            <a href="/contact">CONTATO</a>
         </nav>
         <div class="login">
-            <a href="/admin">Login</a>
+            <a href="/admin" hidden="true">Login</a>
         </div>
     </header>
     <main>
@@ -45,15 +46,21 @@
             <div class="highlight-obs">*Remove de forma automática</div>.
         </div>
         <div class="upload-container">
-            <h1>Faça Upload<i class="fas fa-upload"></i></h1>
+            <h1 id="upload-title" class="upload-button-title">
+                <div class="upload-text">
+                    <div id="upload-button-text">CLIQUE AQUI</div>
+                    <div id="upload-button-text-2">PARA FAZER UPLOAD</div>
+                </div>
+                <i class="fas fa-upload"></i>
+            </h1>
             <div id="drop-zone" class="drop-zone">
                 <p class="drag-message">Solte o arquivo aqui</p>
-                <p class="default-text">Arraste e solte a imagem aqui ou clique para selecionar</p>
+                <p class="default-text">ou Arraste e solte a imagem aqui</p>
                 <div id="file-info" class="file-info">
                     <p id="file-name" class="file-name">Nenhuma imagem selecionada</p>
                     <p id="remove-file" class="remove-file" style="display: none;">&#10006;</p> <!-- Botão para remover -->
                 </div>
-                <input type="file" id="file" name="file" multiple>
+                <input type="file" id="file" name="file" multiple style="display: none;"> <!-- Escondido -->
                 <div id="loading" class="loading"></div>
             </div>
             <div id="error-message" class="error-message"></div>
