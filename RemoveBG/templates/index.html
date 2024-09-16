@@ -67,6 +67,15 @@
             <button id="upload-button">Enviar</button>
         </div>
     </main>
+    <div id="loading-overlay" class="hidden">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <div class="loading-status">
+                <p id="status-message">Processando...</p>
+                <p id="status-update">Por favor, aguarde...</p>
+            </div>
+        </div>
+    </div>
     <script src="{% static 'js/upload.js' %}"></script>
 </body>
 </html>

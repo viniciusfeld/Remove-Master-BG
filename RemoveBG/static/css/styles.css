@@ -342,7 +342,7 @@ main {
 }
 
 /* Adicione isso ao seu CSS */
-.loading {
+/* .loading {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -353,17 +353,65 @@ main {
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
+} */
+
+/* Estilos para o overlay */
+/* Estilos para o overlay */
+/* Estilo para o overlay de loading */
+
+
+/* CSS para o overlay de loading */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Garante que o overlay esteja acima de outros elementos */
 }
 
+/* CSS para o conteúdo de loading */
+.loading-content {
+    text-align: center;
+    color: #fff; /* Cor do texto branco */
+}
+
+/* CSS para o ícone de loading (spinner) */
+.spinner {
+    border: 8px solid #f3f3f3; /* Cor de fundo do spinner */
+    border-top: 8px solid #33CC33; /* Cor da borda superior do spinner */
+    border-radius: 50%;
+    width: 50px; /* Tamanho do spinner */
+    height: 50px; /* Tamanho do spinner */
+    animation: spin 1s linear infinite; /* Animação de rotação */
+    margin: 0 auto; /* Centraliza o spinner horizontalmente */
+}
+
+/* Animação de rotação */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-/* Certifique-se de esconder o loading inicialmente */
-#loading {
+/* CSS para a mensagem de status */
+.loading-status p {
+    margin: 10px 0; /* Espaçamento entre as mensagens */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+#loading-overlay.hidden {
     display: none;
 }
+
+
+/* Certifique-se de esconder o loading inicialmente */
+/* #loading {
+    display: none;
+} */
 
 /* Responsividade */
 

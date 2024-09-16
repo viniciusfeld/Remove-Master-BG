@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const fileInfo = document.getElementById('file-info');
     const errorMessageElement = document.getElementById('error-message');
     const uploadButton = document.getElementById('upload-button');
-    const loadingElement = document.getElementById('loading'); // Elemento de loading
+    // const loadingElement = document.getElementById('loading'); // Elemento de loading
     const allowedFileTypes = ['image/jpeg', 'image/png', 'image/gif'];
 
     // Função para obter o token CSRF
@@ -17,6 +17,47 @@ document.addEventListener('DOMContentLoaded', function() {
         return tokenElement ? tokenElement.content : '';
     }
 
+    function showLoadingOverlay() {
+        document.getElementById('loading-overlay').classList.remove('hidden');
+        simulateStatusUpdates(); // Função para simular atualizações de status
+        toggleUploadButton(false);
+    }
+    
+    // Ocultar o overlay
+    function hideLoadingOverlay() {
+        document.getElementById('loading-overlay').classList.add('hidden');
+
+        toggleUploadButton(true); // Habilita o botão de enviar
+    }
+    
+    // Simulação de atualizações de status
+    function simulateStatusUpdates() {
+        const statusMessages = [
+            'Recebendo imagem...',
+            'Removendo fundo...',
+            'Refinando imagem...',
+            'Inserindo fundo branco',
+            'Finalizando...'
+        ];
+    
+        let index = 0;
+        const statusElement = document.getElementById('status-update');
+        
+        const interval = setInterval(() => {
+            index++;
+            if (index >= statusMessages.length) {
+                index = 0;
+            }
+            statusElement.textContent = statusMessages[index];
+        }, 2000); // Atualiza a cada 2 segundos
+    
+        // Parar simulação após o processamento
+        setTimeout(() => {
+            clearInterval(interval);
+            statusElement.textContent = 'Pronto!';
+        }, 10000); // Simula o processamento por 10 segundos
+    }
+    
     // Função para exibir a mensagem de erro
     function showError(message) {
         if (errorMessageElement) {
@@ -51,20 +92,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Função para mostrar o loading
-    function showLoading() {
-        if (loadingElement) {
-            loadingElement.style.display = 'block';
-        }
-        toggleUploadButton(false); // Desabilita o botão de enviar
-    }
+    // function showLoading() {
+    //     if (loadingElement) {
+    //         loadingElement.style.display = 'block';
+    //     }
+    //     toggleUploadButton(false); // Desabilita o botão de enviar
+    // }
 
-    // Função para ocultar o loading
-    function hideLoading() {
-        if (loadingElement) {
-            loadingElement.style.display = 'none';
-        }
-        toggleUploadButton(true); // Habilita o botão de enviar
-    }
+    // // Função para ocultar o loading
+    // function hideLoading() {
+    //     if (loadingElement) {
+    //         loadingElement.style.display = 'none';
+    //     }
+    //     toggleUploadButton(true); // Habilita o botão de enviar
+    // }
 
     // Função para atualizar a visibilidade do botão de remover
     function updateRemoveButtonVisibility() {
@@ -201,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
     
-        showLoading(); // Mostra o loading
+        showLoadingOverlay(); // Mostra o loading
     
         const formData = new FormData();
         formData.append('file', file);
@@ -214,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .then(response => {
-            hideLoading(); // Oculta o loading
+            hideLoadingOverlay(); // Oculta o loading
             if (response.ok) {
                 return response.json(); // Converte a resposta para JSON
             } else {
@@ -230,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .catch(error => {
-            hideLoading(); // Oculta o loading em caso de erro
+            hideLoadingOverlay(); // Oculta o loading em caso de erro
             console.error('Erro:', error);
             showError('Falha ao enviar o arquivo. Por favor, tente novamente.'); // Mostra a mensagem de erro
         });
