@@ -74,7 +74,7 @@ def contact_view(request):
 
 def download_file(request):
     file_name = request.session.get('file_name')
-    download_url = f"http://{url_site}/serve_file/{file_name}"  # Ajuste conforme a configuração do seu site
+    download_url = f"https://{url_site}/serve_file/{file_name}"  # Ajuste conforme a configuração do seu site
     context = {'download_url': download_url, 'file_name': file_name,}
     return render(request, 'file_download.html', context)
 
