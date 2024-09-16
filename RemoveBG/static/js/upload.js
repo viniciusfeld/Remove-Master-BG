@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 index = 0;
             }
             statusElement.textContent = statusMessages[index];
-        }, 2000); // Atualiza a cada 2 segundos
+        }, 3000); // Atualiza a cada 2 segundos
     
         // Parar simulação após o processamento
         setTimeout(() => {
