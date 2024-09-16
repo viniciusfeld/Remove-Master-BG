@@ -44,13 +44,15 @@ header {
 nav {
     display: flex;
     gap: 15px;
+    justify-content: flex-end;
+    width: 75%;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-size: 20px;
-    padding: 5px 10px;
+    padding: 10px 15px;
     border-radius: 10px;
     transition: background-color 0.3s, color 0.4s;
     background-color: #EB268F;

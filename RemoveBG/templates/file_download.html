@@ -43,8 +43,16 @@
             <div class="highlight-obs">*Remove de forma automática</div>.
         </div>
         <div class="upload-container">
-            <h1>Faça Download<i class="fas fa-upload"></i></h1>
-            <p class="download-instruction">CLIQUE NOS LINKS ABAIXO PARA BAIXAR SUA IMAGEM</p>
+            <a href="{{ download_url }}?type=jpg" download="{{ file_name }}">
+                <h1 id="upload-title" class="upload-button-title">
+                    <div class="upload-text">
+                        <div id="upload-button-text-2">CLIQUE AQUI PARA FAZER</div>
+                        <div id="upload-button-text">DOWNLOAD</div>
+                    </div>
+                    <i class="fas fa-download"></i>
+                </h1>
+            </a>
+            <p class="download-instruction">OU CLIQUE NOS LINKS ABAIXO PARA BAIXAR SUA IMAGEM</p>
             <!-- Botões de download como imagens -->
             <a href="{{ download_url }}?type=jpg" download="{{ file_name }}" class="download-button">
                 <img src="{% static 'img/mercado-livre-logo.png' %}" class="download-icon">
