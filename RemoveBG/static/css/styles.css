@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     padding: 0 10px; /* Adiciona um pequeno padding lateral */
+    overflow-x: hidden;
 }
 
 header {
@@ -105,20 +106,6 @@ main {
     margin-top: 150px;
     flex: 1;
 }
-
-/* .upload-container h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5em;
-    color: #33CC33;
-}
-
-.upload-container h1 i {
-    margin-left: 15px;
-    color:  #33CC33;
-    font-size: 40px;
-} */
 
 .upload-button-title {
     display: inline-flex;
@@ -379,6 +366,26 @@ main {
 }
 
 /* Responsividade */
+
+/* Para telas maiores que 1024px */
+@media screen and (min-width: 1024px) {
+    .upload-container {
+        width: 70%; /* Aumenta a largura do container */
+        margin-top: 70px; /* Ajusta a margem superior */
+    }
+
+    .image-container {
+        width: 60%; /* Centraliza e ajusta a largura */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .upload-button-title {
+        width: 50%; /* Botão menor para telas grandes */
+        font-size: 28px; /* Fonte maior para o botão */
+    }
+}
+
 @media screen and (max-width: 768px) {
     main {
         flex-direction: column; /* Coloca a drop-zone acima da image-container */
@@ -388,11 +395,13 @@ main {
     .upload-container {
         margin-right: 0; /* Remove a margem direita para centralizar o container */
         margin-top: 50px; /* Reduz a margem superior */
+        width: 90%; /* Ajusta a largura para telas menores */
     }
 
     .image-container {
         margin-left: 0; /* Remove a margem esquerda para centralizar a imagem */
         margin-top: 30px; /* Reduz a margem superior */
+        width: 90%; /* Ajusta a largura para centralizar a imagem */
     }
 }
 
@@ -401,6 +410,7 @@ main {
         flex-direction: column; /* Ajusta o header para telas muito pequenas */
         align-items: center;
         gap: 20px;
+        text-align: center;
     }
 
     .logo {
@@ -408,21 +418,89 @@ main {
         text-align: center; /* Centraliza o logo */
     }
 
-    /* nav, .login {
-        margin-right: 0;
-        justify-content: center;
-    } */
-
     .upload-container {
         max-width: 90%; /* Reduz a largura máxima para melhor se ajustar à tela */
+        margin-top: 30px; /* Ajuste adicional para melhorar o espaçamento */
     }
 
     .drop-zone {
         height: 200px; /* Reduz a altura da drop-zone para melhor ajuste */
     }
 
+    .image-container {
+        margin-top: 20px; /* Reduz a margem superior em telas muito pequenas */
+        text-align: center; /* Centraliza a imagem */
+    }
+
     .image-container p {
-        font-size: 35px; /* Reduz o tamanho da fonte do texto na imagem */
+        font-size: 30px; /* Reduz o tamanho da fonte do texto na imagem */
+    }
+
+    .upload-button-title {
+        width: 80%; /* Faz o botão ocupar toda a largura da drop-zone */
+        font-size: 24px; /* Ajusta o tamanho da fonte do botão */
+        padding: 10px; /* Ajusta o padding do botão */
+    }
+
+    .upload-button-title i {
+        font-size: 35px; /* Reduz o tamanho do ícone no botão */
     }
 }
 
+/* Para telas maiores que 1024px */
+@media screen and (min-width: 1024px) {
+    .upload-container {
+        width: 70%; /* Aumenta a largura do container */
+        margin-top: 70px; /* Ajusta a margem superior */
+    }
+
+    .image-container {
+        width: 60%; /* Centraliza e ajusta a largura */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .upload-button-title {
+        width: 50%; /* Botão menor para telas grandes */
+        font-size: 28px; /* Fonte maior para o botão */
+    }
+}
+
+/* Para telas entre 768px e 1024px (tablets e iPads) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .upload-container {
+        width: 80%; /* Ajuste de largura para tablets */
+        margin-top: 60px; /* Ajuste a margem superior */
+    }
+
+    .image-container {
+        width: 80%; /* Ajusta o tamanho da imagem para se adaptar a tablets */
+    }
+
+    .upload-button-title {
+        width: 70%; /* Ajusta o tamanho do botão de upload */
+        font-size: 26px; /* Fonte um pouco maior para tablets */
+    }
+}
+
+/* Para telas entre 480px e 768px (smartphones maiores) */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .upload-container {
+        width: 85%; /* Ajuste de largura */
+        margin-top: 40px; /* Ajusta a margem superior */
+    }
+
+    .image-container {
+        margin-top: 25px; /* Reduz a margem superior para uma melhor organização */
+        width: 85%;
+    }
+
+    .upload-button-title {
+        width: 70%; /* Botão ligeiramente maior */
+        font-size: 22px;
+    }
+
+    .drop-zone {
+        height: 220px; /* Ajuste a altura da drop-zone */
+    }
+}
